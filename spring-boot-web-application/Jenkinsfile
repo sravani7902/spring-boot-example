@@ -19,14 +19,14 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Running tests..."
-                sh 'mvn clean test'
+                sh 'mvn -f spring-boot-web-application/pom.xml clean install'
             }
         }
 
         stage('Package') {
             steps {
                 echo "Packaging the application..."
-                sh 'mvn clean package'
+                sh 'mvn -f spring-boot-web-application/pom.xml clean package'
             }
         }
 
